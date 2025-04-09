@@ -33,75 +33,29 @@ Let’s unpack this:
 ### 🧪 What Does "Vectorized" Mean?
 Instead of processing one value at a time, Photon processes multiple values at once using CPU-level vector instructions (like AVX-512).
 
-Think of it like this:
+### ⚙️ When is Photon Used in Databricks?
+-> When you're using Databricks SQL (it's the default engine).
+-> When you're using Delta Lake tables with optimized compute.
+-> When you're running SQL or dataframe operations in       Databricks notebooks on DBR (Databricks Runtime) 9.1+ (and Photon is enabled).
 
-Traditional (Row-based)	                   Photon (Vectorized)
-Process: 1, then 2, then 3...	Process: [1, 2, 3, 4] in one go
-Like: Worker carries one box at a time	Worker carries 4 boxes at once with a cart
-This is a huge speed boost, especially for things like:
+-- Photon can replace parts of Spark SQL execution behind the scenes, making it seamless for you.
 
-Scanning large datasets
-
-Filtering rows
-
-Aggregations (e.g., COUNT, SUM)
-
-🛠️ Real-Life Analogy
-Imagine you're counting cash:
-
-One person (JVM/Spark) counts each bill one by one
-
-Another person (Photon/C++) counts stacks of 10 bills at a time using a money-counting machine
-
-Who’s faster? The machine.
-
-Photon = money-counting machine for data.
-
-⚙️ When is Photon Used in Databricks?
-When you're using Databricks SQL (it's the default engine).
-
-When you're using Delta Lake tables with optimized compute.
-
-When you're running SQL or dataframe operations in Databricks notebooks on DBR (Databricks Runtime) 9.1+ (and Photon is enabled).
-
-Photon can replace parts of Spark SQL execution behind the scenes, making it seamless for you.
-
-📊 Performance Example
+### 📊 Performance Example
 Let’s say you run this:
 
-sql
-Copy
-Edit
+```
 SELECT customer_id, SUM(amount)
 FROM sales
 WHERE country = 'US'
 GROUP BY customer_id
 With Photon:
-
+```
 It will read the Parquet files using native C++ code
 
 Apply filters using SIMD (vector instructions)
 
-Aggregate using blazing-fast C++ functions
+🔍 Result: Up to *10-20x faster* in many real-world workloads!
 
-🔍 Result: Up to 10-20x faster in many real-world workloads!
-
-📁 Does Photon Change Your Code?
+### 📁 Does Photon Change Your Code?
 Nope. Your code stays the same. Photon is like a turbocharged engine under the hood — you just get the speed.
-
-🧠 Summary (Teacher Mode):
-Concept	Photon Version
-Language	C++ (native)
-Execution style	Vectorized (SIMD instructions)
-Benefit	Up to 10–20x faster SQL/DataFrame queries
-Typical use cases	Delta Lake, Databricks SQL, ETL pipelines
-Requires code change?	No
-✅ Want to Check If Photon is Enabled?
-In Databricks:
-
-sql
-Copy
-Edit
-SET spark.databricks.photon.enabled;
-Or just check your SQL Warehouse configuration — if it says Photon, you're using it.
 
