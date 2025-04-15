@@ -1,4 +1,4 @@
-    # 📘 Delta Sharing – Notes for Databricks
+# 📘 Delta Sharing – Notes for Databricks
 
 **Delta sharing is not just for Databricks---->Databricks ,that is one part of databricks**
 Even if you have any other recipient you can share the data to any other recipient (apart from databricks)
