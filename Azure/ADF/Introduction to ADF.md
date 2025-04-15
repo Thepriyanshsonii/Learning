@@ -1,3 +1,4 @@
+![Alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Flogowik.com%2Fazure-data-factory-logo-vector-svg-pdf-ai-eps-cdr-free-download-16272.html&psig=AOvVaw3HAFNdKrR2BxAc92MECmCn&ust=1744794808038000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKiMp6fZ2YwDFQAAAAAdAAAAABAE)
 # 🔷 What is Azure Data Factory (ADF)?
 Azure Data Factory (ADF) is a cloud-based data integration service that allows you to **create**, **schedule**, and **orchestrate** data pipelines to **move** and **transform** *data* from various sources to destinations.
 
