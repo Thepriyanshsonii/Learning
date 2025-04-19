@@ -29,7 +29,7 @@ You open a notebook → write SELECT * FROM table → run the cell → it uses a
 These clusters are for running production jobs — something scheduled or triggered, like a pipeline.
 
 **⚙️ Bit-Level Details:**
-- C**reated automatically when a job starts.
+- Created automatically when a job starts.
 
 - Destroyed automatically when the job ends.
 
