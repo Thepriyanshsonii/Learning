@@ -1,4 +1,6 @@
 ![Alt text](https://miro.medium.com/v2/format:webp/1*X0_s8C5ZsnJreHZMl_JS8w.png)
+
+
 # 🔷 What is Azure Data Factory (ADF)?
 Azure Data Factory (ADF) is a cloud-based data integration service that allows you to **create**, **schedule**, and **orchestrate** data pipelines to **move** and **transform** *data* from various sources to destinations.
 
@@ -10,9 +12,16 @@ Imagine you work in a logistics company. You have to:
 - Pack or modify them (data transformation),
 
 - Deliver them to customers (destination systems).
-*
+
 ***ADF is the logistics manager of your data world.***
 
+1. ***ADF-*** its an Azuer service
+
+2. ***ETL cloud service:-***
+Etract (Read data) , Transform(perform operation ) , Load (store at destination)
+
+3. ***Use SSIS (SQL SERVER INTEGRATION SERVICES PACKAGES)***
+ 
 ### ✅ Why is Azure Data Factory used?
 **ADF is used for:**
 - Data movement (copy data from source to destination),
@@ -35,7 +44,7 @@ Imagine you work in a logistics company. You have to:
 
 ### 💡 Advantages of Azure Data Factory
 |**Feature** |	**Advantage** |
-|--------|-------------|
+|------------|----------------|
 | No code / low code |	You can build complex workflows visually with minimal coding. |
 | Scalable	| Handles huge volumes of data, grows with your needs. |
 | Pay-as-you-go |	Cost-effective, pay only for what you use. |
@@ -58,8 +67,24 @@ Imagine you work in a logistics company. You have to:
 | Activity |	Individual task (copy, transformation, execution).|
 | Dataset |	Metadata pointing to data (like a file or table).
 | Linked Service |	Connection string to a data source or sink.|
-|Trigger |	Tells when to run the pipeline (on schedule, event, etc).|
+|Trigger |	Tells when to run the pipeline (on schedule, event, etc
+).|
 |Integration Runtime|	The engine that runs the activities (self-hosted or Azure-hosted).|
 
+---
 
+### Extra notes:
+
+**SSIS --> ETL PIPELINE --> DESTINATION DATA --> POWER BI**
+
+***Example***- you onwer of a game  
+will generate so many logs
+logs stores in ADLS (raw data) : big data (unstructured data)
+
+Customer's information  and market camping - on primes storage 
+
+
+## Top level Concepts in Azure Data Factory
+
+![Top level concepts](tlciadf.png)
 
